@@ -47,6 +47,11 @@ function buscar(){
     fetch(api) //Devuelve una promise
             .then(response =>  response.json())
             .then(data => {
+                console.log(data.length)
+                if(data.error){
+                    document.querySelector('h1').innerHTML = "Not found";
+                    return;
+                }
                 const info = data.info;
 
                 document.querySelector('h1').innerHTML = "Results: " + info.count +", Pages: " + info.pages;
