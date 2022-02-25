@@ -1,6 +1,6 @@
 # Práctica4 PAT - API-REST de Rick y Morty
 Esta página consiste en un buscador de todos los personajes que aparecen en la serie de dibujos animados Rick y Morty.
-El enlace a la página principal se puede encontrar en: https://menendez6.github.io/PAT-3/
+El enlace a la página principal se puede encontrar en: https://menendez6.github.io/PAT4-APIREST/
 
 # Intrucciones
 
