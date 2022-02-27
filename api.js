@@ -1,5 +1,4 @@
-const nextButton = document.getElementById("next");
-const prevButton = document.getElementById("previous");
+
 const nextBtn = document.querySelector("#btn-next");
 const prevBtn = document.querySelector("#btn-previous");
 const searchBtn = document.querySelector('#btn-form');
@@ -54,7 +53,7 @@ function buscar(){
                 }
                 const info = data.info;
 
-                document.querySelector('h1').innerHTML = "Results: " + info.count +", Pages: " + info.pages;
+                document.querySelector('h2').innerHTML = "Results: " + info.count +", Total pages: " + info.pages +", Current page: " + pagina;
 
                 //Miramos a ver si hay más páginas antes o después de la actual
                 if (info.prev === null){
@@ -124,7 +123,7 @@ function buscar(){
 document.addEventListener('DOMContentLoaded',function(){
     buscar();
 
-    document.querySelector('form').onsubmit = () =>{
+    document.querySelector('#buscador').onsubmit = () =>{
         pagina = 1;
         //Recogemos los valores introducidos por el usuario
         nombre = document.querySelector('#Name').value;
@@ -144,16 +143,18 @@ document.addEventListener('DOMContentLoaded',function(){
         //Stop form from submitting
         return false;
     }
-});
 
-nextButton.addEventListener("submit", function(){
-    pagina ++;
-    buscar();
-});
+    document.querySelector('#next').onsubmit = () =>{
+        pagina ++;
+        buscar();
+        return false;
+    }
 
-prevButton.addEventListener("submit", function(){
-    pagina --;
-    buscar();
+    document.querySelector('#previous').onsubmit = () =>{
+        pagina --;
+        buscar();
+        return false;
+    }
 });
 
 function limpiarTabla(){
